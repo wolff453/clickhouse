@@ -1,4 +1,11 @@
+version: "3"
 services:
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
   clickhouse:
     image: clickhouse/clickhouse-server
     ports:
@@ -13,3 +20,7 @@ services:
     environment:
       - CLICKHOUSE_USER=tymbaca
       - CLICKHOUSE_PASSWORD=qwerty
+volumes:
+  grafana-storage:
+  clickhouse-storage:
+  clickhouse-logs:
