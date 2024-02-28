@@ -26,16 +26,16 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/sharedEbs/grafana-storage'
+      device: '/home/ec2-user/sharedEbs/grafana-storage'
   clickhouse-storage:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/sharedEbs/clickhouse-storage'
+      device: '/home/ec2-user/sharedEbs/clickhouse-storage'
   clickhouse-logs:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/sharedEbs/clickhouse-logs'
+      device: '/home/ec2-user/sharedEbs/clickhouse-logs'
