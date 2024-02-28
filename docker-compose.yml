@@ -1,11 +1,23 @@
 version: "3"
 services:
+  init_grafana:
+    image: grafana/grafana
+    user: root
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        chown -R 65534:65534 /var/lib/grafana
+    volumes:
+      - /sharedEbs/grafana-storage:/var/lib/grafana
   grafana:
     image: grafana/grafana
     ports:
       - 3000:3000
     volumes:
       - /sharedEbs/grafana-storage:/var/lib/grafana
+    depends_on:
+      - init_grafana
   clickhouse:
     image: clickhouse/clickhouse-server
     ports:
