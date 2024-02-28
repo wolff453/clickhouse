@@ -26,16 +26,16 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/ec2-user/test/grafana-storage'
+      device: '/home/ec2-user/test1/grafana-storage'
   clickhouse-storage:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/ec2-user/test/clickhouse-storage'
+      device: '/home/ec2-user/test1/clickhouse-storage'
   clickhouse-logs:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/ec2-user/test/clickhouse-logs'
+      device: '/home/ec2-user/test1/clickhouse-logs'
